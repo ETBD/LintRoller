@@ -28,7 +28,7 @@ npm install --save-dev eslint-config-airbnb babel-eslint eslint eslint-plugin-js
 # Additional Checks
 These are additional static code analysis tools which are not suitable for
 running inline, usually because their checks span across files or lines.
-These are instead checked by CodeClimate.
+These are instead checked by CodeClimate. (See below for reference to running)
 
 * Brakeman
 * Bundler-audit
@@ -42,8 +42,15 @@ engines, and the included .codeclimate.yml file makes that magic happen.
 
 If you wish to run these checks on your local machine before a Pull Request or
 push upstream, the [Code Climate CLI](https://github.com/codeclimate/codeclimate)
-emables that functionality through a Docker Container.  
+enables that functionality through a Docker Container.  
 
-
+`codeclimate analyze` or `codeclimate analyze [file/directory]`
 
 # Deployment
+
+To add/update these linters to your various projects, run `ruby deploy.rb [DIRECTORY]`
+. Presumably [DIRECTORY] is a path to your folder containing repositories. The script
+will add/update each linter within each subdirectory of the specified directory.
+
+For example, if I had a directory `/home/nikky/Repositories`, I'd run `ruby deploy.rb ~/Repositories`
+This would scan for each folder within `Repositories` and place the linters in each one accordingly.
