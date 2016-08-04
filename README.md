@@ -1,8 +1,6 @@
 # LintRoller
 Shared Storage and Deployment of Code Linters
 
-
-
 # Inline Linter List
 These are linters which have widespread support and are plug-n-play for most
 common text editors and IDEs. It is recommended to integrate these into your
@@ -13,9 +11,19 @@ workflow for maximum happiness.
 * CSS Lint (with custom configuration)
 * SCSS-Lint (based on airbnb/css rules)
 
-**Note**: You may need to add relevant packages in your :development group
+## Rubocop Install
+You may need to add relevant packages in your :development group
 of a Rails Gemfile in order to ensure these gems are installed for your app-specific
 Ruby version.
+
+## ESLint Install
+We're using an exported ESLint file, which requires various node dependencies.
+
+Running the following command should pull down the required npm dependencies:
+
+```
+npm install --save-dev eslint-config-airbnb babel-eslint eslint eslint-plugin-jsx-a11y eslint-plugin-import
+```
 
 # Additional Checks
 These are additional static code analysis tools which are not suitable for
